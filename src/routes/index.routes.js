@@ -14,13 +14,13 @@ const router = express.Router();
 
 // rotas publicas
 router.use('/auth', authRouter);
+router.use('/collection', collectionRouter);
+router.use('/cards', cardRouter);
 
 // rotas privadas
 router.use(authMiddleware); // Middleware de autenticação para todas as rotas abaixo
 
 router.use('/animes', animesRouter);
-router.use('/collection', collectionRouter);
-router.use('/cards', cardRouter);
 router.use('/personagens', personagemRouter);
 
 export default router;
